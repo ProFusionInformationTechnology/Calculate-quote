@@ -1,0 +1,23 @@
+.component-area {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: fit-content;
+    min-height: 150px;
+    border: 1px black solid;
+    border-radius: 2%;
+    .title {
+        width: 100%;
+        height: 20px;
+    }
+    .input-area {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        input {
+            width: 118px;
+            padding: 1px 0px;
+            border: 1px black solid;
+        }
+    }
+}

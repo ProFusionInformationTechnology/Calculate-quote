@@ -1,0 +1,7 @@
+<!-- <app-block-area></app-block-area> -->
+<ng-container *ngFor="let testId of testArray">
+  <app-block-area
+    [id]="testId"
+  ></app-block-area>
+</ng-container>
+<button (click)="testAdd()">測試增加</button>
