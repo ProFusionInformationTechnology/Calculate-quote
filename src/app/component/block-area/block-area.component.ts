@@ -14,7 +14,7 @@ export class BlockAreaComponent implements OnInit  {
 
   public list = {
     id: this.id,
-    value: [
+    values: [
       {
         name: '請輸入名稱',
         num: 0,
