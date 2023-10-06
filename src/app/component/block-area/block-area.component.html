@@ -7,11 +7,13 @@
         <span class="price">單價</span>
         <span class="total">總價</span>
     </div>
-    <div class="input-area">
-        <input class="name">
-        <input class="num">
-        <input class="price">
-        <input class="total">
-    </div>
+    <ng-container *ngFor="let val of list.values">
+        <div class="input-area">
+            <input class="name" [(ngModel)]="val.name">
+            <input class="num" [(ngModel)]="val.num">
+            <input class="price" [(ngModel)]="val.orPrice">
+            <input class="total" [(ngModel)]="val.orTotal">
+        </div>
+    </ng-container>
     <button>測試輸出</button>
 </div>
