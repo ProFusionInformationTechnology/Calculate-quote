@@ -1,7 +1,14 @@
 <div class="component-area">
-    <span class="title">測試，編號：{{id}}</span>
+    <span class="title">項目：{{id}}</span>
+    <hr>
+    <div class="children-area">
+        <span class="name">名稱</span>
+        <span class="num">數量</span>
+        <span class="price">單價</span>
+        <span class="total">總價</span>
+    </div>
     <div class="input-area">
-        <input id="name" (change)="consoleValue($event)">
+        <input class="name">
         <input class="num">
         <input class="price">
         <input class="total">
