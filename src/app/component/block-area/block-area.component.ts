@@ -29,11 +29,6 @@ export class BlockAreaComponent implements OnInit  {
     caTotal: 0,
   }
 
-  public consoleValue(e:Event) {
-    console.error((e.target as HTMLInputElement).value)
-    console.error(this.list)
-  }
-
   public addListValue() {
     const data = {
       name: '請輸入名稱',
