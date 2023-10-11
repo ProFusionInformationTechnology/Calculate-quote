@@ -9,10 +9,10 @@
     </div>
     <ng-container *ngFor="let val of list.values">
         <div class="input-area">
-            <input class="name" [(ngModel)]="val.name">
-            <input class="num" [(ngModel)]="val.num">
-            <input class="price" [(ngModel)]="val.orPrice">
-            <input class="total" [(ngModel)]="val.orTotal" readonly>
+            <input type="text" class="name" [(ngModel)]="val.name">
+            <input type="number" class="num" [(ngModel)]="val.num" (blur)="calculatePrice(val)">
+            <input type="number" class="price" [(ngModel)]="val.orPrice">
+            <input type="number" class="total" [(ngModel)]="val.orTotal" readonly>
         </div>
     </ng-container>
     <button (click)="addListValue()">新增欄位</button>

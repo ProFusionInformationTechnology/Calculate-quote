@@ -7,3 +7,7 @@ html, body {
 input:read-only {
     background-color: rgba($color: #000000, $alpha: 0.2);
 }
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
