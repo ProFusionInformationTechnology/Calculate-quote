@@ -21,7 +21,7 @@ export class BlockAreaComponent implements OnInit  {
         orPrice: 10,
         caPrice: 10,
         orTotal: 0,
-        caTotal: 0,
+        caTotal: 0
       }
     ],
     name: `項目 ${this.id}`,
@@ -32,5 +32,17 @@ export class BlockAreaComponent implements OnInit  {
   public consoleValue(e:Event) {
     console.error((e.target as HTMLInputElement).value)
     console.error(this.list)
+  }
+
+  public addListValue() {
+    const data = {
+      name: '請輸入名稱',
+      num: 0,
+      orPrice: 10,
+      caPrice: 10,
+      orTotal: 0,
+      caTotal: 0
+    }
+    this.list.values.push(data);
   }
 }
