@@ -1,11 +1,13 @@
 .component-area {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 540px;
     height: fit-content;
-    min-height: 150px;
+    min-height: 110px;
     border: 1px black solid;
     margin-bottom: 10px;
+    padding-bottom: 23px;
     .title {
         width: 100%;
         height: 20px;
@@ -37,5 +39,10 @@
         .total {
             width: 118px;
         }
+    }
+    button {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
     }
 }
