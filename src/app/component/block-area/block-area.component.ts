@@ -45,5 +45,16 @@ export class BlockAreaComponent implements OnInit  {
     obj.orTotal = obj.num * obj.orPrice;
     obj.caPrice = obj.orPrice;
     obj.caTotal = obj.orTotal;
+    this.calculateAllOrPrice()
+  }
+
+  public calculateAllOrPrice() {
+    let price = 0;
+    Object.keys(this.list.values).map(index => {
+      const num = Number(index);
+      price += this.list.values[num].orTotal;
+    })
+    this.list.orTotal = price;
+    this.list.caTotal = price;
   }
 }
