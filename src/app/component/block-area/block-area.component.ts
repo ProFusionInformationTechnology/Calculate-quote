@@ -40,4 +40,10 @@ export class BlockAreaComponent implements OnInit  {
     }
     this.list.values.push(data);
   }
+
+  public calculatePrice(obj:any) {
+    obj.orTotal = obj.num * obj.orPrice;
+    obj.caPrice = obj.orPrice;
+    obj.caTotal = obj.orTotal;
+  }
 }
