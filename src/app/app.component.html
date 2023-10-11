@@ -3,9 +3,9 @@
   <span>原始價格</span>
   <span>計算結果</span>
 </div>
-<ng-container *ngFor="let testId of testArray">
+<ng-container *ngFor="let testId of blockArray">
   <app-block-area
     [id]="testId"
   ></app-block-area>
 </ng-container>
-<button (click)="testAdd()">測試增加</button>
+<button (click)="addBlock()">增加區塊</button>
