@@ -9,6 +9,9 @@
     margin-bottom: 10px;
     padding-bottom: 23px;
     .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         width: 100%;
         height: 20px;
     }
