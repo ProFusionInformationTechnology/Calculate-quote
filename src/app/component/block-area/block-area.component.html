@@ -1,7 +1,7 @@
 <div class="component-area-all">
     <div class="component-area">
         <div class="title">
-            <input type="text" [(ngModel)]="list.name">
+            <input type="text" [(ngModel)]="list.name" (blur)="outputData()">
             <span>項目總金額：{{list.orTotal}}</span>
         </div>
         <hr>
