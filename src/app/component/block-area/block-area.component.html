@@ -1,1 +1,45 @@
-<p>block-area works!</p>
+<div class="component-area-all">
+    <div class="component-area">
+        <div class="title">
+            <input type="text" [(ngModel)]="list.name">
+            <span>項目總金額：{{list.orTotal}}</span>
+        </div>
+        <hr>
+        <div class="children-area">
+            <span class="name">名稱</span>
+            <span class="num">數量</span>
+            <span class="price">單價</span>
+            <span class="total">總價</span>
+        </div>
+        <ng-container *ngFor="let val of list.values">
+            <div class="input-area">
+                <input type="text" class="name" [(ngModel)]="val.name">
+                <input type="number" class="num" [(ngModel)]="val.num" (blur)="calculatePrice(val)">
+                <input type="number" class="price" [(ngModel)]="val.orPrice" (blur)="calculatePrice(val)">
+                <input type="number" class="total" [(ngModel)]="val.orTotal" readonly>
+            </div>
+        </ng-container>
+        <button (click)="addListValue()">新增欄位</button>
+    </div>
+    <div class="component-area">
+        <div class="title">
+            <span>{{list.name}}</span>
+            <span>項目總金額：{{list.caTotal}}</span>
+        </div>
+        <hr>
+        <div class="children-area">
+            <span class="name">名稱</span>
+            <span class="num">數量</span>
+            <span class="price">單價</span>
+            <span class="total">總價</span>
+        </div>
+        <ng-container *ngFor="let val of list.values">
+            <div class="input-area">
+                <input type="text" class="name" [(ngModel)]="val.name" readonly>
+                <input type="number" class="num" [(ngModel)]="val.num" (blur)="calculatePrice(val)" readonly>
+                <input type="number" class="price" [(ngModel)]="val.caPrice" (blur)="calculatePrice(val)" readonly>
+                <input type="number" class="total" [(ngModel)]="val.caTotal" readonly>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<!-- <app-block-area></app-block-area> -->
+<div class="title-area">
+  <span>原始價格</span>
+  <span>計算結果</span>
+</div>
+<ng-container *ngFor="let id of blockArrayNum">
+  <app-block-area
+    [id]="id"
+    (totalPrices)="receiveData($event)"
+  ></app-block-area>
+</ng-container>
+<button (click)="addBlock()">增加區塊</button>
