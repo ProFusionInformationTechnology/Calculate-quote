@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class BlockAreaComponent implements OnInit  {
   ngOnInit(): void {
     this.list.id = this.id;
-    this.list.name = `項目 ${this.id}`;
+    this.list.name = `請輸入標題：項目${this.id}`;
   }
   @Input() id:Number = 0;
 
@@ -26,7 +26,7 @@ export class BlockAreaComponent implements OnInit  {
         caTotal: 0
       }
     ],
-    name: `項目 ${this.id}`,
+    name: `請輸入標題：項目${this.id}`,
     orTotal: 0,
     caTotal: 0,
   }
