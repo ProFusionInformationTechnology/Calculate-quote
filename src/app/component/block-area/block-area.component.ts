@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-block-area',
@@ -11,6 +11,8 @@ export class BlockAreaComponent implements OnInit  {
     this.list.name = `項目 ${this.id}`;
   }
   @Input() id:Number = 0;
+
+  @Output() totalPrices = new EventEmitter<object>();
 
   public list = {
     id: this.id,
@@ -56,5 +58,12 @@ export class BlockAreaComponent implements OnInit  {
     })
     this.list.orTotal = price;
     this.list.caTotal = price;
+
+    const data = {
+      id: this.id,
+      orTotal: this.list.orTotal,
+      caTotal: this.list.caTotal
+    }
+    this.totalPrices.emit(data);
   }
 }

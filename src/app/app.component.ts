@@ -24,4 +24,8 @@ export class AppComponent {
     };
     this.blockArrayAll.push(obj);
   }
+
+  public receiveData(receiveObj:Object) {
+    console.error(receiveObj)
+  }
 }
