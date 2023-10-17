@@ -61,6 +61,7 @@ export class BlockAreaComponent implements OnInit  {
 
     const data = {
       id: this.id,
+      name: this.list.name,
       orTotal: this.list.orTotal,
       caTotal: this.list.caTotal
     }
