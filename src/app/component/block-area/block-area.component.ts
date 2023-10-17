@@ -57,8 +57,10 @@ export class BlockAreaComponent implements OnInit  {
       price += this.list.values[num].orTotal;
     })
     this.list.orTotal = price;
-    this.list.caTotal = price;
+    this.list.caTotal = price;    
+  }
 
+  public outputData() {
     const data = {
       id: this.id,
       name: this.list.name,
