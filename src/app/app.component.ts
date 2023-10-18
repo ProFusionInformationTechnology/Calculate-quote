@@ -20,15 +20,19 @@ export class AppComponent {
     caTotal: 0
   };
 
-  public addBlock() {
-    this.blockArrayNum.push(this.blockArrayNum.length + 1);
-    const obj = {
-      name: '未命名',
-      id: this.blockArrayNum.length,
-      orTotal: 0,
-      caTotal: 0
-    };
-    this.blockArrayAll.push(obj);
+  public addBlock(type:string = 'nor') {
+    if (type == 'nor') {
+      this.blockArrayNum.push(this.blockArrayNum.length + 1);
+      const obj = {
+        name: '未命名',
+        id: this.blockArrayNum.length,
+        orTotal: 0,
+        caTotal: 0
+      };
+      this.blockArrayAll.push(obj);
+    } else if (type == 'spe') {
+      this.blockArraySpecialNum.push(this.blockArraySpecialNum.length + 1);
+    }
   }
 
   public receiveData(receiveObj:reObj) {
