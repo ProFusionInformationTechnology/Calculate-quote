@@ -1,1 +1,30 @@
-<p>block-area-special works!</p>
+<div class="component-area-all">
+    <div class="component-area">
+        <div class="title">
+            <input type="text" [(ngModel)]="list.name">
+            <span>項目總金額：</span>
+        </div>
+        <hr>
+        <div class="children-area">
+            <span class="name">選項</span>
+            <span class="num">運算符</span>
+            <span class="price">比例</span>
+            <span class="total">總價</span>
+        </div>
+        <div class="input-area">
+            <input type="text" class="name">
+            <input type="number" class="num">
+            <input type="number" class="price">
+            <input type="number" class="total" readonly>
+        </div>
+        <!-- <ng-container *ngFor="let val of list.values">
+            <div class="input-area">
+                <input type="text" class="name">
+                <input type="number" class="num">
+                <input type="number" class="price">
+                <input type="number" class="total" readonly>
+            </div>
+        </ng-container> -->
+        <button>新增欄位</button>
+    </div>
+</div>

@@ -7,12 +7,23 @@ import { Component, Input } from '@angular/core';
 })
 export class BlockAreaSpecialComponent {
   ngOnInit(): void {
-    console.error(this.listAll)
+    this.list.id = this.id;
+    this.list.name = `計算百分比：項目${this.id}`;
   }
 
   // ngOnChanges(): void {
   //   console.error('變更後', this.listAll)
   // }
+  @Input() id:Number = 0;
 
   @Input() listAll:Array<object> = [];
+
+  public list = {
+    id: this.id,
+    name: `計算百分比：項目${this.id}`,
+    orTotal: 0,
+    caTotal: 0,
+    target: '',
+    operation: ''
+  }
 }
