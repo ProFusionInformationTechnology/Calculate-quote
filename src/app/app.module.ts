@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BlockAreaComponent } from './component/block-area/block-area.component';
+import { BlockAreaSpecialComponent } from './component/block-area-special/block-area-special.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlockAreaComponent
+    BlockAreaComponent,
+    BlockAreaSpecialComponent
   ],
   imports: [
     BrowserModule,
