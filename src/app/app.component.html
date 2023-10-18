@@ -8,6 +8,11 @@
     (totalPrices)="receiveData($event)"
   ></app-block-area>
 </ng-container>
+<ng-container *ngFor="let id of blockArraySpecialNum">
+  <app-block-area-special
+    [listAll]="blockArrayAll"
+  ></app-block-area-special>
+</ng-container>
 <div class="sum-area">
   <span>合計：{{totalObj.orTotal}}元</span>
   <span>合計：{{totalObj.caTotal}}元</span>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-block-area-special',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./block-area-special.component.scss']
 })
 export class BlockAreaSpecialComponent {
+  ngOnInit(): void {
+    console.error(this.listAll)
+  }
 
+  // ngOnChanges(): void {
+  //   console.error('變更後', this.listAll)
+  // }
+
+  @Input() listAll:Array<object> = [];
 }

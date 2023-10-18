@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public blockArrayNum:Array<Number> = [1];
+  public blockArraySpecialNum:Array<Number> = [1];
   public blockArrayAll = [{
     name: '未命名',
     id: 1,
