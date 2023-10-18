@@ -14,6 +14,11 @@ export class AppComponent {
     caTotal: 0
   }];
 
+  public totalObj = {
+    orTotal: 0,
+    caTotal: 0
+  };
+
   public addBlock() {
     this.blockArrayNum.push(this.blockArrayNum.length + 1);
     const obj = {
@@ -25,7 +30,28 @@ export class AppComponent {
     this.blockArrayAll.push(obj);
   }
 
-  public receiveData(receiveObj:Object) {
-    console.error(receiveObj)
+  public receiveData(receiveObj:reObj) {
+    const index = receiveObj['id'] - 1;
+    this.blockArrayAll[index].name = receiveObj['name'];
+    this.blockArrayAll[index].orTotal = receiveObj['orTotal'];
+    this.blockArrayAll[index].caTotal = receiveObj['caTotal'];
+
+    this.calculateTotalPrice();
   }
+
+  public calculateTotalPrice() {
+    this.totalObj = {
+      orTotal: 0,
+      caTotal: 0
+    };
+    this.blockArrayAll.map(val => {
+      this.totalObj.orTotal += val.orTotal;
+      this.totalObj.caTotal += val.caTotal;
+    });
+  }
+}
+
+interface reObj {
+  [name: string]: any;
+  [id: number]: any;
 }

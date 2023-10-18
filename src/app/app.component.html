@@ -8,4 +8,8 @@
     (totalPrices)="receiveData($event)"
   ></app-block-area>
 </ng-container>
+<div class="sum-area">
+  <span>合計：{{totalObj.orTotal}}元</span>
+  <span>合計：{{totalObj.caTotal}}元</span>
+</div>
 <button (click)="addBlock()">增加區塊</button>
