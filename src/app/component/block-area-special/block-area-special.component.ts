@@ -23,6 +23,12 @@ export class BlockAreaSpecialComponent {
     target: '',
     operation: ''
   };
+
+  public selectList = '請選擇選項';
+
+  public addList(obj:reObj) {
+    this.selectList = obj['name'];
+  };
 }
 
 interface reObj {
