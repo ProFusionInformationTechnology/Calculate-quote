@@ -11,12 +11,9 @@ export class BlockAreaSpecialComponent {
     this.list.name = `計算百分比：項目${this.id}`;
   }
 
-  // ngOnChanges(): void {
-  //   console.error('變更後', this.listAll)
-  // }
   @Input() id:Number = 0;
 
-  @Input() listAll:Array<object> = [];
+  @Input() listAll:Array<reObj> = [];
 
   public list = {
     id: this.id,
@@ -25,5 +22,10 @@ export class BlockAreaSpecialComponent {
     caTotal: 0,
     target: '',
     operation: ''
-  }
+  };
+}
+
+interface reObj {
+  [name: string]: any;
+  [id: number]: any;
 }

@@ -58,10 +58,18 @@
                 width: 118px;
             }
         }
-        button {
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
+        .operation-area-all {
+            display: inline-flex;
+            flex-direction: row;
+            .operation-area {
+                display: inline-flex;
+                flex-direction: column;
+                width: 50%;
+                button {
+                    width: fit-content;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 }

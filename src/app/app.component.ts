@@ -9,7 +9,7 @@ export class AppComponent {
   public blockArrayNum:Array<Number> = [1];
   public blockArraySpecialNum:Array<Number> = [1];
   public blockArrayAll = [{
-    name: '未命名',
+    name: `請輸入標題：項目${this.blockArrayNum.length}`,
     id: 1,
     orTotal: 0,
     caTotal: 0
@@ -24,7 +24,7 @@ export class AppComponent {
     if (type == 'nor') {
       this.blockArrayNum.push(this.blockArrayNum.length + 1);
       const obj = {
-        name: '未命名',
+        name: `請輸入標題：項目${this.blockArrayNum.length}`,
         id: this.blockArrayNum.length,
         orTotal: 0,
         caTotal: 0

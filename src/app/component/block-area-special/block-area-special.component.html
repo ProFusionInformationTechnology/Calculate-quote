@@ -17,14 +17,12 @@
             <input type="number" class="price">
             <input type="number" class="total" readonly>
         </div>
-        <!-- <ng-container *ngFor="let val of list.values">
-            <div class="input-area">
-                <input type="text" class="name">
-                <input type="number" class="num">
-                <input type="number" class="price">
-                <input type="number" class="total" readonly>
+        <div class="operation-area-all">
+            <div class="operation-area">
+                <ng-container *ngFor="let val of listAll; let i = index">
+                    <button>{{val['name']}}</button>
+                </ng-container>
             </div>
-        </ng-container> -->
-        <button>新增欄位</button>
+        </div>
     </div>
 </div>
