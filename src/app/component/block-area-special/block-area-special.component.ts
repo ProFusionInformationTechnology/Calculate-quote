@@ -25,10 +25,24 @@ export class BlockAreaSpecialComponent {
   };
 
   public selectList = '請選擇選項';
+  public selectOperation = '+';
 
   public addList(obj:reObj) {
     this.selectList = obj['name'];
   };
+
+  public addOperation(status:string) {
+    switch (status) {
+      case 'add':
+        this.selectOperation = '+';
+        break;
+        case 'mul':
+        this.selectOperation = '*';
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 interface reObj {

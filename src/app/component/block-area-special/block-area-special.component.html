@@ -13,7 +13,7 @@
         </div>
         <div class="input-area">
             <input type="text" class="name" [(ngModel)]="selectList" readonly>
-            <input type="number" class="num" readonly>
+            <input type="text" class="num" [(ngModel)]="selectOperation" readonly>
             <input type="number" class="price">
             <input type="number" class="total" readonly>
         </div>
@@ -22,6 +22,10 @@
                 <ng-container *ngFor="let val of listAll; let i = index">
                     <button (click)="addList(val)">{{val['name']}}</button>
                 </ng-container>
+            </div>
+            <div class="operation-area">
+                <button (click)="addOperation('add')">+</button>
+                <button (click)="addOperation('mul')">*</button>
             </div>
         </div>
     </div>
