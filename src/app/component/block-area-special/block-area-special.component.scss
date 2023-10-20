@@ -29,6 +29,9 @@
             span {
                 color: rgba($color: #000000, $alpha: 0.0);
             }
+            .title-name {
+                color: rgba($color: #000000, $alpha: 1.0);
+            }
         }
         .title + hr {
             width: calc(100% - 2px);
