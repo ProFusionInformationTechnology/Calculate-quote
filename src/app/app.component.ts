@@ -14,6 +14,12 @@ export class AppComponent {
     orTotal: 0,
     caTotal: 0
   }];
+  public blockArraySpecialAll = [{
+    name: `計算百分比：項目${this.blockArraySpecialNum.length}`,
+    id: 1,
+    orTotal: 0,
+    caTotal: 0
+  }];
 
   public totalObj = {
     orTotal: 0,
@@ -32,6 +38,13 @@ export class AppComponent {
       this.blockArrayAll.push(obj);
     } else if (type == 'spe') {
       this.blockArraySpecialNum.push(this.blockArraySpecialNum.length + 1);
+      const obj = {
+        name: `計算百分比：項目${this.blockArraySpecialNum.length}`,
+        id: this.blockArrayNum.length,
+        orTotal: 0,
+        caTotal: 0
+      };
+      this.blockArraySpecialAll.push(obj);
     }
   }
 
