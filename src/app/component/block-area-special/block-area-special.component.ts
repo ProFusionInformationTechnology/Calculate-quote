@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-block-area-special',
@@ -15,6 +15,8 @@ export class BlockAreaSpecialComponent {
 
   @Input() listAll:Array<reObj> = [];
 
+  @Output() totalPrices = new EventEmitter<object>();
+
   public list = {
     id: this.id,
     name: `計算百分比：項目${this.id}`,
@@ -24,24 +26,34 @@ export class BlockAreaSpecialComponent {
     operation: ''
   };
 
+  public hasSelect: boolean = false;
   public selectList = '請選擇選項';
-  public selectOperation = '+';
+  public setRatio = 1.0;
+
+  public calValue = 0;
 
   public addList(obj:reObj) {
     this.selectList = obj['name'];
+    if (!this.hasSelect) {
+      this.hasSelect = !this.hasSelect;
+    }
   };
 
-  public addOperation(status:string) {
-    switch (status) {
-      case 'add':
-        this.selectOperation = '+';
-        break;
-        case 'mul':
-        this.selectOperation = '*';
-        break;
-      default:
-        break;
+  public calculateValue() {
+    console.error(this.hasSelect)
+    if (!this.hasSelect) {
+      return
     }
+
+    let targetVal = 0;
+
+    this.listAll.map(obj => {
+      if (obj['name'] === this.selectList) {
+        targetVal = obj['orTotal'];
+      }
+    });
+
+    this.calValue = targetVal * this.setRatio;
   }
 }
 
