@@ -30,7 +30,8 @@ export class BlockAreaSpecialComponent {
   public selectList = '請選擇選項';
   public setRatio = 1.0;
 
-  public calValue = 0;
+  public calOrValue = 0;
+  public calCaValue = 0;
 
   public addList(obj:reObj) {
     this.selectList = obj['name'];
@@ -53,7 +54,8 @@ export class BlockAreaSpecialComponent {
       }
     });
 
-    this.calValue = targetVal * this.setRatio;
+    this.calOrValue = targetVal * this.setRatio;
+    this.calCaValue = this.calOrValue;
   }
 }
 
