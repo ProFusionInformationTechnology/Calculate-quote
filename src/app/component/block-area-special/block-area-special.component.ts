@@ -37,10 +37,10 @@ export class BlockAreaSpecialComponent {
     if (!this.hasSelect) {
       this.hasSelect = !this.hasSelect;
     }
+    this.calculateValue();
   };
 
   public calculateValue() {
-    console.error(this.hasSelect)
     if (!this.hasSelect) {
       return
     }
