@@ -12,6 +12,7 @@
   <app-block-area-special
     [id]="id"
     [listAll]="blockArrayAll"
+    (totalPrices)="receiveSpecialData($event)"
   ></app-block-area-special>
 </ng-container>
 <div class="sum-area">

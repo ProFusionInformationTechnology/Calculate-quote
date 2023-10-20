@@ -57,12 +57,25 @@ export class AppComponent {
     this.calculateTotalPrice();
   }
 
+  public receiveSpecialData(receiveObj:reObj) {
+    const index = receiveObj['id'] - 1;
+    this.blockArraySpecialAll[index].name = receiveObj['name'];
+    this.blockArraySpecialAll[index].orTotal = receiveObj['orTotal'];
+    this.blockArraySpecialAll[index].caTotal = receiveObj['caTotal'];
+
+    this.calculateTotalPrice();
+  }
+
   public calculateTotalPrice() {
     this.totalObj = {
       orTotal: 0,
       caTotal: 0
     };
     this.blockArrayAll.map(val => {
+      this.totalObj.orTotal += val.orTotal;
+      this.totalObj.caTotal += val.caTotal;
+    });
+    this.blockArraySpecialAll.map(val => {
       this.totalObj.orTotal += val.orTotal;
       this.totalObj.caTotal += val.caTotal;
     });

@@ -56,6 +56,18 @@ export class BlockAreaSpecialComponent {
 
     this.calOrValue = targetVal * this.setRatio;
     this.calCaValue = this.calOrValue;
+
+    this.outputData();
+  }
+
+  public outputData() {
+    const data = {
+      id: this.id,
+      name: this.list.name,
+      orTotal: this.calOrValue,
+      caTotal: this.calCaValue
+    }
+    this.totalPrices.emit(data);
   }
 }
 
