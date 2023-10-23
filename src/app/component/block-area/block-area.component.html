@@ -24,7 +24,6 @@
     <div class="component-area">
         <div class="title">
             <span>{{list.name}}</span>
-            <span>項目總金額：{{list.caTotal}}</span>
         </div>
         <hr>
         <div class="children-area">
@@ -41,5 +40,6 @@
                 <input type="number" class="total" [(ngModel)]="val.caTotal" readonly>
             </div>
         </ng-container>
+        <span class="show-total">項目總金額：{{list.orTotal}}</span>
     </div>
 </div>
