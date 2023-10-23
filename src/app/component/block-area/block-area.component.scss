@@ -56,9 +56,15 @@
             }
         }
         button {
+            height: 25px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .show-total {
             position: absolute;
             bottom: 0px;
-            right: 0px;
+            right: 10px;
         }
     }
 }

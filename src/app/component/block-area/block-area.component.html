@@ -2,7 +2,7 @@
     <div class="component-area">
         <div class="title">
             <input type="text" [(ngModel)]="list.name" (blur)="outputData()">
-            <span>項目總金額：{{list.orTotal}}</span>
+            <button (click)="addListValue()">新增欄位</button>
         </div>
         <hr>
         <div class="children-area">
@@ -19,7 +19,7 @@
                 <input type="number" class="total" [(ngModel)]="val.orTotal" readonly>
             </div>
         </ng-container>
-        <button (click)="addListValue()">新增欄位</button>
+        <span class="show-total">項目總金額：{{list.orTotal}}</span>
     </div>
     <div class="component-area">
         <div class="title">
