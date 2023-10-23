@@ -26,6 +26,11 @@ export class AppComponent {
     caTotal: 0
   };
 
+  public rangeObj = {
+    maxV: 0,
+    minV: 0
+  };
+
   public addBlock(type:string = 'nor') {
     if (type == 'nor') {
       this.blockArrayNum.push(this.blockArrayNum.length + 1);

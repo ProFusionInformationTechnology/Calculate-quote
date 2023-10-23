@@ -19,5 +19,15 @@
   <span>合計：{{totalObj.orTotal}}元</span>
   <span>合計：{{totalObj.caTotal}}元</span>
 </div>
+<div class="range-area-all">
+  <div class="range-area">
+    <span>預算預期上限值：</span>
+    <input type="number" [(ngModel)]="rangeObj.maxV">
+  </div>
+  <div class="range-area">
+    <span>預算預期下限值：</span>
+    <input type="number" [(ngModel)]="rangeObj.minV">
+  </div>
+</div>
 <button (click)="addBlock('nor')">增加區塊</button>
 <button (click)="addBlock('spe')">增加計算百分比區塊</button>
