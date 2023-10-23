@@ -1,0 +1,47 @@
+<div class="component-area-all">
+    <div class="component-area">
+        <div class="title">
+            <input type="text" [(ngModel)]="list.name">
+            <span>項目總金額：</span>
+        </div>
+        <hr>
+        <div class="children-area">
+            <span class="name">選項</span>
+            <span class="num">運算符</span>
+            <span class="price">比例</span>
+            <span class="total">總價</span>
+        </div>
+        <div class="input-area">
+            <input type="text" class="name" [(ngModel)]="selectList" readonly>
+            <input type="text" class="num" value="*" readonly>
+            <input type="number" class="price" [(ngModel)]="setRatio" (blur)="calculateValue()">
+            <input type="number" class="total" [(ngModel)]="calOrValue" readonly>
+        </div>
+        <div class="operation-area-all">
+            <div class="operation-area">
+                <ng-container *ngFor="let val of listAll; let i = index">
+                    <button (click)="addList(val)">{{val['name']}}</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="component-area">
+        <div class="title">
+            <span class="title-name">{{list.name}}</span>
+            <span>項目總金額：</span>
+        </div>
+        <hr>
+        <div class="children-area">
+            <span class="name">選項</span>
+            <span class="num">運算符</span>
+            <span class="price">比例</span>
+            <span class="total">總價</span>
+        </div>
+        <div class="input-area">
+            <input type="text" class="name" [(ngModel)]="selectList" readonly>
+            <input type="text" class="num" value="*" readonly>
+            <input type="number" class="price" [(ngModel)]="setRatio" readonly>
+            <input type="number" class="total" [(ngModel)]="calCaValue" readonly>
+        </div>
+    </div>
+</div>
