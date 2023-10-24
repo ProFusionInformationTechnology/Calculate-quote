@@ -10,6 +10,15 @@ export class BlockAreaComponent implements OnInit  {
     this.list.id = this.id;
     this.list.name = `請輸入標題：項目${this.id}`;
   }
+
+  ngOnChanges() {
+    if (this.reChangeValue) {
+      console.error(this.id, this.reChangeValue)
+    }
+  }
+
+  @Input() reChangeValue:boolean = false;
+
   @Input() id:Number = 0;
 
   @Output() totalPrices = new EventEmitter<object>();

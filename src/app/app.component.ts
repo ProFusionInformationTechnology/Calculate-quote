@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public blockArrayNum:Array<Number> = [1];
+  public blockArrayHasChange:Array<boolean> = [false];
   public blockArraySpecialNum:Array<Number> = [1];
   public blockArrayAll = [{
     name: `請輸入標題：項目${this.blockArrayNum.length}`,
@@ -41,6 +42,7 @@ export class AppComponent {
         caTotal: 0
       };
       this.blockArrayAll.push(obj);
+      this.blockArrayHasChange.push(false);
     } else if (type == 'spe') {
       this.blockArraySpecialNum.push(this.blockArraySpecialNum.length + 1);
       const obj = {
@@ -84,6 +86,21 @@ export class AppComponent {
       this.totalObj.orTotal += val.orTotal;
       this.totalObj.caTotal += val.caTotal;
     });
+  }
+
+  public startCalPrice() {
+    let maxInd = 0;
+    let maxPrice = -999;
+    this.blockArrayAll.map((obj, ind) => {
+      if (obj.orTotal > maxPrice) {
+        maxPrice = obj.orTotal;
+        maxInd = ind;
+      }
+    });
+    this.blockArrayHasChange[maxInd] = !this.blockArrayHasChange[maxInd];
+    setTimeout(() =>{
+      this.blockArrayHasChange[maxInd] = !this.blockArrayHasChange[maxInd];
+    }, 1)
   }
 }
 

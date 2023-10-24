@@ -2,9 +2,10 @@
   <span>原始價格</span>
   <span>計算結果</span>
 </div>
-<ng-container *ngFor="let id of blockArrayNum">
+<ng-container *ngFor="let id of blockArrayNum; index as ind">
   <app-block-area
     [id]="id"
+    [reChangeValue]="blockArrayHasChange[ind]"
     (totalPrices)="receiveData($event)"
   ></app-block-area>
 </ng-container>
@@ -31,4 +32,4 @@
 </div>
 <button (click)="addBlock('nor')">增加區塊</button>
 <button (click)="addBlock('spe')">增加計算百分比區塊</button>
-<button>開始計算</button>
+<button (click)="startCalPrice()">開始計算</button>
