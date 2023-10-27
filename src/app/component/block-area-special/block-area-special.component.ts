@@ -32,6 +32,7 @@ export class BlockAreaSpecialComponent {
 
   public calOrValue = 0;
   public calCaValue = 0;
+  public diff = 0;
 
   public addList(obj:reObj) {
     this.selectList = obj['name'];
@@ -56,6 +57,7 @@ export class BlockAreaSpecialComponent {
 
     this.calOrValue = targetVal * this.setRatio;
     this.calCaValue = this.calOrValue;
+    this.diff = (this.calCaValue - this.calOrValue) / this.calOrValue * 100;
 
     this.outputData();
   }

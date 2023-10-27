@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <div class="component-area">
+    <div class="component-area  show-diff">
         <div class="title">
             <span >{{list.name}}</span>
         </div>
@@ -34,12 +34,14 @@
             <span class="num">運算符</span>
             <span class="price">比例</span>
             <span class="total">總價</span>
+            <span class="diff">差異</span>
         </div>
         <div class="input-area">
             <input type="text" class="name" [(ngModel)]="selectList" readonly>
             <input type="text" class="num" value="*" readonly>
             <input type="number" class="price" [(ngModel)]="setRatio" readonly>
             <input type="number" class="total" [(ngModel)]="calCaValue" readonly>
+            <input type="number" class="diff" [(ngModel)]="diff" readonly>
         </div>
     </div>
 </div>

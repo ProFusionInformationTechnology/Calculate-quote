@@ -13,7 +13,8 @@ export class BlockAreaComponent implements OnInit  {
 
   ngOnChanges() {
     if (this.reChangeValue) {
-      console.error(this.id, this.reChangeValue)
+      this.list.caTotal = 9999;
+      this.outputData();
     }
   }
 
@@ -32,7 +33,8 @@ export class BlockAreaComponent implements OnInit  {
         orPrice: 10,
         caPrice: 10,
         orTotal: 0,
-        caTotal: 0
+        caTotal: 0,
+        diff: 0
       }
     ],
     name: `請輸入標題：項目${this.id}`,
@@ -47,7 +49,8 @@ export class BlockAreaComponent implements OnInit  {
       orPrice: 10,
       caPrice: 10,
       orTotal: 0,
-      caTotal: 0
+      caTotal: 0,
+      diff: 0
     }
     this.list.values.push(data);
   }
@@ -56,6 +59,7 @@ export class BlockAreaComponent implements OnInit  {
     obj.orTotal = obj.num * obj.orPrice;
     obj.caPrice = obj.orPrice;
     obj.caTotal = obj.orTotal;
+    obj.diff = (obj.caPrice - obj.orPrice) / obj.orPrice * 100;
     this.calculateAllOrPrice()
   }
 
