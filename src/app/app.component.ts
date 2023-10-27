@@ -74,18 +74,22 @@ export class AppComponent {
   }
 
   public calculateTotalPrice() {
-    this.totalObj = {
+    let tempObj = {
       orTotal: 0,
       caTotal: 0
     };
-    this.blockArrayAll.map(val => {
-      this.totalObj.orTotal += val.orTotal;
-      this.totalObj.caTotal += val.caTotal;
-    });
-    this.blockArraySpecialAll.map(val => {
-      this.totalObj.orTotal += val.orTotal;
-      this.totalObj.caTotal += val.caTotal;
-    });
+    setTimeout(() => {
+      this.blockArrayAll.map(val => {
+        tempObj.orTotal += val.orTotal;
+        tempObj.caTotal += val.caTotal;
+      });
+      this.blockArraySpecialAll.map(val => {
+        tempObj.orTotal += val.orTotal;
+        tempObj.caTotal += val.caTotal;
+      });
+      this.totalObj.orTotal = tempObj.orTotal;
+      this.totalObj.caTotal = tempObj.caTotal;
+    }, 0);
   }
 
   public startCalPrice() {
