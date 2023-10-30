@@ -13,14 +13,16 @@ export class BlockAreaComponent implements OnInit  {
 
   ngOnChanges() {
     if (this.reChangeValue) {
-      this.list.caTotal = 9999;
-      this.outputData();
     }
   }
 
   @Input() reChangeValue:boolean = false;
 
   @Input() id:Number = 0;
+
+  @Input() changeValObj:Obj = {
+    ratio: 0
+  };
 
   @Output() totalPrices = new EventEmitter<object>();
 
@@ -84,4 +86,9 @@ export class BlockAreaComponent implements OnInit  {
     }
     this.totalPrices.emit(data);
   }
+}
+
+interface Obj {
+  [name: string]: any;
+  [id: number]: any;
 }

@@ -5,6 +5,7 @@
 <ng-container *ngFor="let id of blockArrayNum; index as ind">
   <app-block-area
     [id]="id"
+    [changeValObj]="rangeObj"
     [reChangeValue]="blockArrayHasChange[ind]"
     (totalPrices)="receiveData($event)"
   ></app-block-area>
