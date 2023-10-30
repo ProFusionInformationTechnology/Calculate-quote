@@ -29,6 +29,10 @@
     <span>預算預期下限值：</span>
     <input type="number" [(ngModel)]="rangeObj.minV">
   </div>
+  <div class="range-area">
+    <span>預算預期調整百分比：</span>
+    <input type="number" [(ngModel)]="rangeObj.ratio">
+  </div>
 </div>
 <button (click)="addBlock('nor')">增加區塊</button>
 <button (click)="addBlock('spe')">增加計算百分比區塊</button>

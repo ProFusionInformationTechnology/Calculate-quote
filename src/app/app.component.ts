@@ -29,7 +29,8 @@ export class AppComponent {
 
   public rangeObj = {
     maxV: 0,
-    minV: 0
+    minV: 0,
+    ratio: 0
   };
 
   public addBlock(type:string = 'nor') {
