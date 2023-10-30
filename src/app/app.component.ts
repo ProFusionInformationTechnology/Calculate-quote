@@ -28,8 +28,8 @@ export class AppComponent {
   };
 
   public rangeObj = {
-    maxV: 0,
-    minV: 0,
+    // maxV: 0,
+    // minV: 0,
     ratio: 0
   };
 
