@@ -13,6 +13,7 @@ export class BlockAreaComponent implements OnInit  {
 
   ngOnChanges() {
     if (this.reChangeValue) {
+      this.reCalPrice();
     }
   }
 
@@ -85,6 +86,34 @@ export class BlockAreaComponent implements OnInit  {
       caTotal: this.list.caTotal
     }
     this.totalPrices.emit(data);
+  }
+
+  public reCalPrice() {
+    let price = 0;
+    this.list.values.map(obj => {
+      let tarRatio = 1 + this.decideNum();
+      obj.caPrice = Math.round(obj.orPrice * tarRatio);
+      obj.caTotal = Math.round(obj.num * obj.caPrice);
+      obj.diff = Math.round((obj.caPrice - obj.orPrice) / obj.orPrice * 100);
+      price += obj.caTotal;
+    });
+    this.list.caTotal = price;
+    this.outputData();
+  }
+
+  public decideNum() {
+    let ranNum = Math.random();
+    if (ranNum <= 0.20) {
+      return (this.changeValObj['ratio'] - 2) / 100;
+    } else if (ranNum <= 0.40) {
+      return (this.changeValObj['ratio'] - 1) / 100;
+    } else if (ranNum <= 0.60) {
+      return this.changeValObj['ratio'] / 100;
+    } else if (ranNum <= 0.80) {
+      return (this.changeValObj['ratio'] + 1) / 100;
+    } else {
+      return (this.changeValObj['ratio'] + 2) / 100;
+    }
   }
 }
 
