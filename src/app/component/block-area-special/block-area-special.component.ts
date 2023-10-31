@@ -11,6 +11,13 @@ export class BlockAreaSpecialComponent {
     this.list.name = `計算百分比：項目${this.id}`;
   }
 
+  ngOnChanges() {
+    if (this.reChangeValue) {
+      this.calculateValue();
+    }
+  }
+  @Input() reChangeValue:boolean = false;
+
   @Input() id:Number = 0;
 
   @Input() listAll:Array<reObj> = [];
@@ -48,15 +55,17 @@ export class BlockAreaSpecialComponent {
     }
 
     let targetVal = 0;
+    let targetCaVal = 0;
 
     this.listAll.map(obj => {
       if (obj['name'] === this.selectList) {
         targetVal = obj['orTotal'];
+        targetCaVal = obj['caTotal'];
       }
     });
 
     this.calOrValue = targetVal * this.setRatio;
-    this.calCaValue = this.calOrValue;
+    this.calCaValue = targetCaVal * this.setRatio;
     this.diff = (this.calCaValue - this.calOrValue) / this.calOrValue * 100;
 
     this.outputData();

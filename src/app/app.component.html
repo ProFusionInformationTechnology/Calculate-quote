@@ -10,10 +10,11 @@
     (totalPrices)="receiveData($event)"
   ></app-block-area>
 </ng-container>
-<ng-container *ngFor="let id of blockArraySpecialNum">
+<ng-container *ngFor="let id of blockArraySpecialNum; index as ind">
   <app-block-area-special
     [id]="id"
     [listAll]="blockArrayAll"
+    [reChangeValue]="blockArraySpecialHasChange[ind]"
     (totalPrices)="receiveSpecialData($event)"
   ></app-block-area-special>
 </ng-container>

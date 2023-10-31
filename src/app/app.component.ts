@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public blockArrayNum:Array<Number> = [1];
   public blockArrayHasChange:Array<boolean> = [false];
+  public blockArraySpecialHasChange:Array<boolean> = [false];
   public blockArraySpecialNum:Array<Number> = [1];
   public blockArrayAll = [{
     name: `請輸入標題：項目${this.blockArrayNum.length}`,
@@ -62,6 +63,14 @@ export class AppComponent {
     this.blockArrayAll[index].orTotal = receiveObj['orTotal'];
     this.blockArrayAll[index].caTotal = receiveObj['caTotal'];
 
+    this.blockArraySpecialAll.map((obj, ind) => {
+      this.blockArraySpecialHasChange[ind] = !this.blockArraySpecialHasChange[ind];
+    });
+    setTimeout(() =>{
+      this.blockArraySpecialAll.map((obj, ind) => {
+        this.blockArraySpecialHasChange[ind] = !this.blockArraySpecialHasChange[ind];
+      });
+    }, 1);
     this.calculateTotalPrice();
   }
 
@@ -101,7 +110,7 @@ export class AppComponent {
       this.blockArrayAll.map((obj, ind) => {
         this.blockArrayHasChange[ind] = !this.blockArrayHasChange[ind];
       });
-    }, 100)
+    }, 1);
   }
 }
 
