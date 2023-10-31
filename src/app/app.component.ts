@@ -94,18 +94,14 @@ export class AppComponent {
   }
 
   public startCalPrice() {
-    let maxInd = 0;
-    let maxPrice = -999;
     this.blockArrayAll.map((obj, ind) => {
-      if (obj.orTotal > maxPrice) {
-        maxPrice = obj.orTotal;
-        maxInd = ind;
-      }
+      this.blockArrayHasChange[ind] = !this.blockArrayHasChange[ind];
     });
-    this.blockArrayHasChange[maxInd] = !this.blockArrayHasChange[maxInd];
     setTimeout(() =>{
-      this.blockArrayHasChange[maxInd] = !this.blockArrayHasChange[maxInd];
-    }, 1)
+      this.blockArrayAll.map((obj, ind) => {
+        this.blockArrayHasChange[ind] = !this.blockArrayHasChange[ind];
+      });
+    }, 100)
   }
 }
 
