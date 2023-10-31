@@ -1,4 +1,5 @@
 .title-area, .sum-area {
+    position: relative;
     width: 1100px;
     display: flex;
     flex-direction: row;
@@ -8,5 +9,10 @@
         width: 540px;
         font-size: 48px;
         text-align: center;
+    }
+    .diff {
+        position: absolute;
+        right: 0px;
+        top: 64px;
     }
 }

@@ -25,7 +25,8 @@ export class AppComponent {
 
   public totalObj = {
     orTotal: 0,
-    caTotal: 0
+    caTotal: 0,
+    diff: 0
   };
 
   public rangeObj = {
@@ -99,6 +100,7 @@ export class AppComponent {
       });
       this.totalObj.orTotal = tempObj.orTotal;
       this.totalObj.caTotal = tempObj.caTotal;
+      this.totalObj.diff = Math.round((tempObj.caTotal - tempObj.orTotal) / tempObj.orTotal * 100);
     }, 0);
   }
 
