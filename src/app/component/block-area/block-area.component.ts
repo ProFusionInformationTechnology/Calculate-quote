@@ -59,7 +59,7 @@ export class BlockAreaComponent implements OnInit  {
   }
 
   public calculatePrice(obj:any) {
-    obj.orTotal = obj.num * obj.orPrice;
+    obj.orTotal = Math.round(obj.num * obj.orPrice);
     obj.caPrice = obj.orPrice;
     obj.caTotal = obj.orTotal;
     obj.diff = (obj.caPrice - obj.orPrice) / obj.orPrice * 100;
