@@ -94,7 +94,7 @@ export class BlockAreaComponent implements OnInit  {
       let tarRatio = 1 + this.decideNum();
       obj.caPrice = Math.round(obj.orPrice * tarRatio);
       obj.caTotal = Math.round(obj.num * obj.caPrice);
-      obj.diff = Math.round((obj.caPrice - obj.orPrice) / obj.orPrice * 100);
+      obj.diff = Math.round((obj.caPrice - obj.orPrice) / obj.orPrice * 1000) / 10;
       price += obj.caTotal;
     });
     this.list.caTotal = price;

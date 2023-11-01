@@ -66,7 +66,7 @@ export class BlockAreaSpecialComponent {
 
     this.calOrValue = targetVal * this.setRatio;
     this.calCaValue = targetCaVal * this.setRatio;
-    this.diff = (this.calCaValue - this.calOrValue) / this.calOrValue * 100;
+    this.diff = Math.round((this.calCaValue - this.calOrValue) / this.calOrValue * 1000) / 10;
 
     this.outputData();
   }
