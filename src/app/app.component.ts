@@ -32,7 +32,8 @@ export class AppComponent {
   public rangeObj = {
     // maxV: 0,
     // minV: 0,
-    ratio: 0
+    ratio: 0,
+    allowableError: 0.5
   };
 
   public addBlock(type:string = 'nor') {
@@ -102,7 +103,7 @@ export class AppComponent {
       this.totalObj.caTotal = tempObj.caTotal;
       this.totalObj.diff = Math.round((tempObj.caTotal - tempObj.orTotal) / tempObj.orTotal * 1000) / 10;
 
-      if (this.totalObj.diff > this.rangeObj.ratio + 0.5 || this.totalObj.diff < this.rangeObj.ratio - 0.5) {
+      if (this.totalObj.diff > this.rangeObj.ratio + this.rangeObj.allowableError || this.totalObj.diff < this.rangeObj.ratio - this.rangeObj.allowableError) {
         this.startCalPrice();
       }
     }, 0);
