@@ -101,6 +101,10 @@ export class AppComponent {
       this.totalObj.orTotal = tempObj.orTotal;
       this.totalObj.caTotal = tempObj.caTotal;
       this.totalObj.diff = Math.round((tempObj.caTotal - tempObj.orTotal) / tempObj.orTotal * 1000) / 10;
+
+      if (this.totalObj.diff > this.rangeObj.ratio + 0.5 || this.totalObj.diff < this.rangeObj.ratio - 0.5) {
+        this.startCalPrice();
+      }
     }, 0);
   }
 
