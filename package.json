@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "npx": "npx ngh --no-silent --dir=dist/calculate-quote"
   },
   "private": true,
   "dependencies": {
