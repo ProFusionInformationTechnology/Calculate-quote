@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-block-area',
-  templateUrl: './block-area.component.html',
-  styleUrls: ['./block-area.component.scss']
+    selector: 'app-block-area',
+    templateUrl: './block-area.component.html',
+    styleUrls: ['./block-area.component.scss'],
+    standalone: false
 })
 export class BlockAreaComponent implements OnInit  {
   ngOnInit(): void {

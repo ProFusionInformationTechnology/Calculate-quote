@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-block-area-special',
-  templateUrl: './block-area-special.component.html',
-  styleUrls: ['./block-area-special.component.scss']
+    selector: 'app-block-area-special',
+    templateUrl: './block-area-special.component.html',
+    styleUrls: ['./block-area-special.component.scss'],
+    standalone: false
 })
 export class BlockAreaSpecialComponent {
   ngOnInit(): void {
