@@ -2,22 +2,22 @@
   <span>原始價格</span>
   <span>計算結果</span>
 </div>
-<ng-container *ngFor="let id of blockArrayNum; index as ind">
+@for (id of blockArrayNum; track id; let ind = $index) {
   <app-block-area
     [id]="id"
     [changeValObj]="rangeObj"
     [reChangeValue]="blockArrayHasChange[ind]"
     (totalPrices)="receiveData($event)"
   ></app-block-area>
-</ng-container>
-<ng-container *ngFor="let id of blockArraySpecialNum; index as ind">
+}
+@for (id of blockArraySpecialNum; track id; let ind = $index) {
   <app-block-area-special
     [id]="id"
     [listAll]="blockArrayAll"
     [reChangeValue]="blockArraySpecialHasChange[ind]"
     (totalPrices)="receiveSpecialData($event)"
   ></app-block-area-special>
-</ng-container>
+}
 <div class="sum-area">
   <span>合計：{{totalObj.orTotal}}元</span>
   <span>合計：{{totalObj.caTotal}}元</span>
@@ -25,21 +25,21 @@
 </div>
 <div class="range-area-all">
   <!-- <div class="range-area">
-    <span>預算預期上限值：</span>
-    <input type="number" [(ngModel)]="rangeObj.maxV">
-  </div>
-  <div class="range-area">
-    <span>預算預期下限值：</span>
-    <input type="number" [(ngModel)]="rangeObj.minV">
-  </div> -->
-  <div class="range-area">
-    <span>預算預期調整百分比：</span>
-    <input type="number" [(ngModel)]="rangeObj.ratio">
-  </div>
-  <div class="range-area">
-    <span>允許誤差值：</span>
-    <input type="number" [(ngModel)]="rangeObj.allowableError">
-  </div>
+  <span>預算預期上限值：</span>
+  <input type="number" [(ngModel)]="rangeObj.maxV">
+</div>
+<div class="range-area">
+  <span>預算預期下限值：</span>
+  <input type="number" [(ngModel)]="rangeObj.minV">
+</div> -->
+<div class="range-area">
+  <span>預算預期調整百分比：</span>
+  <input type="number" [(ngModel)]="rangeObj.ratio">
+</div>
+<div class="range-area">
+  <span>允許誤差值：</span>
+  <input type="number" [(ngModel)]="rangeObj.allowableError">
+</div>
 </div>
 <button (click)="addBlock('nor')">增加區塊</button>
 <button (click)="addBlock('spe')">增加計算百分比區塊</button>
